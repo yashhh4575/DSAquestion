@@ -1,0 +1,1 @@
+list(filter(lambda s : len(s)>0, words ))
