@@ -62,6 +62,22 @@ def merge_array(left,right):
         return result 
 print(merge_array(left,right))                               
 
+# merge sort 
 
+nums = [3,1,2,4,1,5,2,6,4]
+
+def merge_sort(arr):
+    if len(arr)<=1:
+        return arr
     
+    mid = len(arr)//2
+
+    left_arr = arr[ :mid]
+    right_arr = arr[mid: ]
+
+    left = merge_sort(left_arr)
+    right = merge_sort(right_arr)
+
+    return merge_array(left,right) 
+print(merge_sort(nums)) 
     
