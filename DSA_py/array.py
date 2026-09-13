@@ -10,4 +10,19 @@ n = len(nums)
 for i in range(0,n):
     if nums[i]>=largest:
         largest = nums[i]
-print(largest)   
+print(largest)  
+
+# remove duplicates from a sorted array 
+
+nums = [1,1,1,2,2,3,4,5,7,7,8,9,10]
+
+n = len(nums)
+freq_map = {}
+for i in range(0,n):
+    freq_map[nums[i]]=0
+
+j=0
+for k in freq_map:
+    nums[j]=k
+    j+=1
+print(j)
