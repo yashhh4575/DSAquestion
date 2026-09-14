@@ -21,5 +21,24 @@ while num > 0:
      num = num // 10
 print(n == result)     
 
+# recursion question 
+nums = 5
+def fun(nums):
+     if nums == 0:
+          return
+     fun(nums-1)
+     print(nums) 
+fun(nums)
+
+
+nums = 5
+def fun(nums):
+     if nums == 0:
+      return 
+     print(nums)
+     fun(nums-1)
+fun(nums)     
+     
+
    
 
