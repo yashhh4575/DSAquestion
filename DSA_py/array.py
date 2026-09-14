@@ -43,3 +43,19 @@ while j<n:
    j += 1  
 print(i+1)   
 
+# cheak the array is sorted
+
+nums = [1,2,3,4,6,7,8,11]
+
+is_sorted = True
+
+n= len(nums)
+for i in range(0,n-1):
+   if nums[i]>nums[i+1]:
+    is_sorted = False
+    break
+if is_sorted:
+   print("true")
+else:
+   print("false")      
+
