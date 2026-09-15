@@ -12,6 +12,36 @@ for i in range(0,n):
         largest = nums[i]
 print(largest)  
 
+#largest 2nd element in an array
+# brute force 
+
+arr = [10, 5, 8, 20, 15]
+
+arr.sort()
+
+print(arr[-2])
+
+# better 
+
+nums = [55, 32, 97, -55, 45, 32, 88, 21]
+
+largest = float("-inf")
+s_largest = float("-inf")
+
+for i in range(len(nums)):
+    largest = max(largest, nums[i])
+
+for i in range(len(nums)):
+    if nums[i] > s_largest and nums[i] != largest:
+        s_largest = nums[i]
+
+print(s_largest)
+
+
+
+
+
+
 # remove duplicates from a sorted array 
 
 nums = [1,1,1,2,2,3,4,5,7,7,8,9,10]
