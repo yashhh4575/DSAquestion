@@ -103,3 +103,13 @@ if is_sorted:
 else:
    print("false")      
 
+# right rotate an array by one place 
+
+nums = [2,3,4,5,6,7,8,1]
+
+temp = nums[n-1]
+for i in range(n-2,-1,-1):
+   nums[i+1] = nums[i]
+nums[0] = temp
+print(nums)   
+
