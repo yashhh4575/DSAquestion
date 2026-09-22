@@ -113,3 +113,33 @@ for i in range(n-2,-1,-1):
 nums[0] = temp
 print(nums)
 
+# right rotate an array by k place
+# brute force 
+
+nums = [2,3,4,5,12,4,1]
+k = 2
+n = len(nums)
+rotation = k%n
+
+for _ in range(0,rotation):
+   e = nums.pop()
+   nums.insert(0,e)
+print(nums)   
+
+# best way 
+
+nums = [22,33,44,55,66,77,88,99]
+
+n= len(nums)
+k=3
+
+def reverse(nums,left,right):
+   while left<right:
+      nums[left],nums[right]=nums[right],nums[left]
+      left += 1
+      right -= 1
+reverse(nums,n-k,n-1)
+reverse(nums,0, n-k-1)
+reverse(nums,0,n-1)      
+print(nums)
+
