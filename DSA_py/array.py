@@ -143,3 +143,59 @@ reverse(nums,0, n-k-1)
 reverse(nums,0,n-1)      
 print(nums)
 
+# move zero to the end
+
+# brute force way
+
+nums = [1,2,3,4,5,0,7,8,0,11,44,0,88]
+
+n = len(nums)
+temp = []
+
+for i in range(0,n):
+   if nums[i] != 0:
+      temp.append(nums[i])
+nz = len(temp)
+for i in range(0,nz):
+   nums[i]=temp[i]
+for i in range(nz,n):
+   nums[i]=0 
+print(nums)      
+
+# optimal sol
+
+nums = [2,3,4,5,0,7,0,9]
+
+nums = [2, 3, 4, 3, 0, 7, 0, 9]
+
+def moveZeroes(nums):
+
+    n = len(nums)
+
+    if len(nums) == 1:
+        return
+
+    i = 0
+
+    while i < len(nums):
+        if nums[i] == 0:
+            break
+        i += 1
+
+    if i == len(nums):
+        return
+
+    j = i + 1
+
+    while j < len(nums):
+        if nums[j] != 0:
+            nums[i], nums[j] = nums[j], nums[i]
+            i += 1
+
+        j += 1
+
+moveZeroes(nums)
+
+print(nums)
+
+    
