@@ -271,8 +271,5 @@ def missingNumber(nums):
     total = n * (n + 1) // 2
 
     return total - sum(nums)
-
-
 nums = [9, 6, 4, 2, 3, 5, 7, 0, 1]
-
-print(missingNumber(nums)) 
+print(missingNumber(nums))
