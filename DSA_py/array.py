@@ -252,4 +252,27 @@ while j < m:
     j += 1
 
 print(result)    
-    
+
+# find the missing number 
+# brute force
+
+nums = [1,2,3,4,6,7,8,9]
+
+n = len(nums)
+for i in range(0,n+1):
+    if i not in nums:
+        print(i)
+
+# optimal way
+
+def missingNumber(nums):
+    n = len(nums)
+
+    total = n * (n + 1) // 2
+
+    return total - sum(nums)
+
+
+nums = [9, 6, 4, 2, 3, 5, 7, 0, 1]
+
+print(missingNumber(nums))
