@@ -273,3 +273,20 @@ def missingNumber(nums):
     return total - sum(nums)
 nums = [9, 6, 4, 2, 3, 5, 7, 0, 1]
 print(missingNumber(nums))
+
+# Max Consecutive Ones
+
+nums = [1,0,1,1,1,1,1,0,0,1,1,1]
+
+n = len(nums)
+count = 0
+max_count = 0
+for i in range(0,n):
+    if nums[i]==1:
+        count += 1
+        max_count = max(max_count,count)
+    else:
+        count = 0
+print(max_count)        
+
+         
