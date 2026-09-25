@@ -37,8 +37,35 @@ def fun(nums):
       return 
      print(nums)
      fun(nums-1)
-fun(nums)     
-     
+fun(nums)   
 
-   
+# ARRAY 
+
+nums = [12, 5, 18, 7, 25, 9]
+
+n = len(nums)
+largest = float("-inf")
+for i in range(0,n):
+    if nums[i]>largest:
+        largest = nums[i]
+print(largest)            
+
+
+nums = [10, 20, 5, 8, 15]    
+
+n = len(nums) 
+largest = float("-inf")
+s_largest = float("-inf")
+for i in range(0,n):
+     if  nums[i]>largest :
+        s_largest = largest
+        largest = nums[i]
+     
+     elif   nums[i] > s_largest and nums[i] != largest:
+            s_largest =nums[i]
+print(s_largest)            
+         
+
+
+            
 
