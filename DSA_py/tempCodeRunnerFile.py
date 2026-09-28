@@ -1,2 +1,6 @@
 
-#largest 2nd element in an arra
+target = 14
+
+n = len(nums)
+has = {}
+for i in range(0,n):
