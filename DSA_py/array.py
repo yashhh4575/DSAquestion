@@ -329,4 +329,47 @@ for i in range(0,n):
     maxi = max(maxi,total)
     if total < 0:
         total = 0
-print(maxi)        
+print(maxi)      
+
+# buy and sell stock 
+# brute force 
+
+nums = [2,3,4,1,8,9]
+
+n = len(nums)
+max_profit = 0
+for i in range(0,n):
+     for j in range(i+1,n):
+         if nums[i]<nums[j]:
+             p = nums[j]-nums[i]
+             max_profit = max(max_profit,p)
+print(max_profit)         
+
+# optimal way 
+
+price = [2,3,4,1,8,9]
+
+n = len(price)
+min_price = float("inf")
+max_profit = 0
+for i in range(0,n):
+      min_price  = min(min_price,price[i])
+      max_profit = max(max_profit,price[i]-min_price)
+print(max_profit)  
+
+# Rearrange Array Elements by Sign
+
+nums = [2,3,-4,5,-6,-7,9,-10]
+
+n = len(nums)
+result = [0]*n
+posindex = 0
+negindex = 1
+for i in range(0,n):
+    if nums[i]>=0:
+        result[posindex] = nums[i]
+        posindex += 2
+    else:
+        result[negindex] = nums[i]
+        negindex += 2
+print(result)            
