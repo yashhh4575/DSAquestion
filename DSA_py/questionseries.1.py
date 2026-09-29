@@ -63,7 +63,39 @@ for i in range(0,n):
      
      elif   nums[i] > s_largest and nums[i] != largest:
             s_largest =nums[i]
-print(s_largest)            
+print(s_largest)     
+
+
+# sorted array 
+
+nums = [1, 2, 2, 4, 5]
+
+is_sorted = True
+
+n = len(nums)
+for i in range(0,n-1):
+    if nums[i]>nums[i+1]:
+        is_sorted = False
+        break
+if is_sorted:
+    print("true")
+else:
+    print(False)       
+
+
+nums = [1,1,1,2,2,3,4,5,6,6,6,7]
+n = len(nums)
+#if n==1:
+#  return 1
+i = 0
+j = i+1
+while j<n:
+   if nums[j] != nums[i]:
+    i += 1
+    nums[i],nums[j]=nums[j],nums[i]
+   j += 1  
+print(i+1)   
+
          
 
 

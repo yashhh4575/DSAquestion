@@ -77,7 +77,7 @@ nums = [1,1,1,2,2,3,4,5,7,7,8,9,10]
 
 n = len(nums)
 #if n==1:
-#   return 1
+#  return 1
 i = 0
 j = i+1
 while j<n:
