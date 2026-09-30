@@ -372,4 +372,134 @@ for i in range(0,n):
     else:
         result[negindex] = nums[i]
         negindex += 2
-print(result)            
+print(result)   
+
+# Longest Consecutive Sequence
+
+nums = [1,2,3,99,101,102,103,104]
+
+n = len(nums)
+max_count = 0
+for i in range(0,n):
+    num = nums[i]
+    count = 1
+    while num + 1 in nums:
+        count += 1
+        num = num + 1
+    max_count = max(max_count,count) 
+print(max_count)  
+
+# opimal way 
+
+nums = [1, 99, 101, 98, 2, 5, 3, 100, 1, 1]
+
+my_set = set(nums)
+
+longest = 0
+
+for num in my_set:
+    if num - 1 not in my_set:
+        x = num
+        count = 1
+
+        while x + 1 in my_set:
+            count += 1
+            x += 1
+
+        longest = max(longest, count)
+
+print(longest)
+
+
+# 2D matrix 
+
+nums = [[5, 20, 3], [7, -10, 9], [1, -52, 6]]
+
+rows = len(nums)
+cols = len(nums[0])
+
+for i in range(0, rows):
+    for j in range(0, cols):
+        print(nums[i][j], end=" ")
+    print()
+
+# Set Matrix Zeros
+#brute force 
+
+def markInability(matrix, row, col):
+    r = len(matrix)
+    c = len(matrix[0])
+
+    # Mark row
+    for j in range(c):
+        if matrix[row][j] != 0:
+            matrix[row][j] = float("inf")
+
+    # Mark column
+    for i in range(r):
+        if matrix[i][col] != 0:
+            matrix[i][col] = float("inf")
+
+
+def setZeros(matrix):
+    r = len(matrix)
+    c = len(matrix[0])
+
+    # Store original zero positions
+    zeros = []
+
+    for i in range(r):
+        for j in range(c):
+            if matrix[i][j] == 0:
+                zeros.append((i, j))
+
+    # Mark rows and columns
+    for i, j in zeros:
+        markInability(matrix, i, j)
+
+    # Convert inf to 0
+    for i in range(r):
+        for j in range(c):
+            if matrix[i][j] == float("inf"):
+                matrix[i][j] = 0
+
+
+# Input
+matrix = [
+    [7, 1, 2, 3],
+    [4, 5, 0, 6],
+    [7, 8, 9, 10],
+    [11, 12, 13, 14]
+]
+
+setZeros(matrix)
+
+print(matrix)
+
+# optimal way
+
+# Input
+matrix = [
+    [7, 1, 2, 3],
+    [4, 5, 0, 6],
+    [7, 8, 9, 10],
+    [11, 12, 13, 14]
+]
+
+row = len(matrix)
+col = len(matrix[0])
+
+rowtrk = [0 for _ in range(row)]
+coltrk = [0 for _ in range(col)]
+
+for i in range(0,row):
+    for j in range(0,col):
+        if matrix[i][j]==0:
+            rowtrk[i] = -1
+            coltrk[j] = -1
+
+for i in range(0,row):
+    for j in range(0,col):
+        if rowtrk[i] == -1 or coltrk[j] == -1:
+            matrix[i][j]=0
+print(matrix)            
