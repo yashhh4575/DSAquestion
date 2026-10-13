@@ -45,3 +45,64 @@ target = 13
 ans = binarySearch(nums, 0, len(nums) - 1, target)
 
 print("Index:", ans)
+
+# Search Insert Position
+
+nums = [1, 3, 4, 5, 8, 9, 14, 15, 19, 20, 21]
+target = 16
+
+n = len(nums)
+
+low = 0
+high = n - 1
+
+while low <= high:
+    mid = (low + high) // 2
+
+    if nums[mid] >= target:
+        high = mid - 1
+    else:
+        low = mid + 1
+
+print(low)
+
+# Floor & Ceil in Sorted Array
+
+nums = [2, 3, 3, 4, 5, 6, 7, 7, 7, 8, 9, 10, 12, 13]
+
+target = 6
+
+n = len(nums)
+
+ceil = -1
+floor = -1
+
+low = 0
+high = n - 1
+
+while low <= high:
+    mid = (low + high) // 2
+
+    if nums[mid] == target:
+        floor = nums[mid]
+        ceil = nums[mid]
+        break
+
+    elif nums[mid] > target:
+        ceil = nums[mid]
+        high = mid - 1
+
+    else:
+        floor = nums[mid]
+        low = mid + 1
+
+print(floor, ceil)
+
+
+
+
+
+
+
+
+
