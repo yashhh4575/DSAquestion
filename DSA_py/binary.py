@@ -69,11 +69,9 @@ print(low)
 # Floor & Ceil in Sorted Array
 
 nums = [2, 3, 3, 4, 5, 6, 7, 7, 7, 8, 9, 10, 12, 13]
-
 target = 6
 
 n = len(nums)
-
 ceil = -1
 floor = -1
 
@@ -98,10 +96,129 @@ while low <= high:
 
 print(floor, ceil)
 
+# Find First & Last Occurrence in Sorted Array
+
+nums = [1,2,3,3,3,3,3,3,3,3,3,5,6,7]
+target = 3
+
+n = len(nums)
+first = -1
+last = -1
+
+for i in range(0,n):
+    if nums[i]==target:
+        if first == -1:
+            first = i
+        last = i  
+print(first,last)
+
+ # optimal ways 
+
+nums = [1,2,3,3,3,3,3,3,3,3,3,5,6,7]
+target = 3
+
+def lowerBound(nums, target):
+    n = len(nums)
+    lb = -1
+
+    low = 0
+    high = n - 1
+
+    while low <= high:
+        mid = (low + high) // 2
+
+        if nums[mid] >= target:
+            lb = mid
+            high = mid - 1
+        else:
+            low = mid + 1
+
+    return lb
+
+
+def upperBound(nums, target):
+    n = len(nums)
+    ub = -1
+
+    low = 0
+    high = n - 1
+
+    while low <= high:
+        mid = (low + high) // 2
+
+        if nums[mid] > target:
+            ub = mid
+            high = mid - 1
+        else:
+            low = mid + 1
+
+    return ub
+
+# Output
+print("Lower Bound:", lowerBound(nums, target))
+print("Upper Bound:", upperBound(nums, target))
+
+# Count Occurrences in Sorted Array
+
+nums = [1,2,3,3,3,3,3,3,3,3,3,5,6,7]
+target = 3
+
+n = len(nums)
+first = -1
+last = -1
+
+for i in range(0,n):
+    if nums[i]==target:
+        if first == -1:
+            first = i
+        last = i          
+print(last-first+1)
 
 
 
+nums = [1,2,3,3,3,3,3,3,3,3,3,5,6,7]
+target = 3
 
+def lowerBound(nums, target):
+    n = len(nums)
+    lb = -1
+
+    low = 0
+    high = n - 1
+
+    while low <= high:
+        mid = (low + high) // 2
+
+        if nums[mid] >= target:
+            lb = mid
+            high = mid - 1
+        else:
+            low = mid + 1
+
+    return lb
+
+
+def upperBound(nums, target):
+    n = len(nums)
+    ub = n
+
+    low = 0
+    high = n - 1
+
+    while low <= high:
+        mid = (low + high) // 2
+
+        if nums[mid] > target:
+            ub = mid
+            high = mid - 1
+        else:
+            low = mid + 1
+
+    return ub
+
+# Output
+print("Lower Bound:", lowerBound(nums, target))
+print("Upper Bound:", upperBound(nums, target))
 
 
 
